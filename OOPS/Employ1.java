@@ -1,24 +1,26 @@
-class Employ1
+ import java.util.Scanner;
+ class Employ1
 {
  String name;
  int id;
  double sal ;
-  int total_leave;
- int working_days;
+  
+
  
- public void setValue(String name,int id ,double sal,int total_leave,int working_days)
+ public void setValue(String name,int id ,double sal)
  {
    this.name =name;
    this.id= id;
    this.sal=sal;
-   this.total_leave=total_leave;
-   this.working_days=working_days;
+   
    }
    
    public void getDetails()
    {
    System.out.println("Name of Employ is:" +name);
-   System.out.println("Id of Employ is:" +id);
+  
+    System.out.println("Id of Employ is:" +id);
+     System.out.println("Sal of Employ is:" +sal);
    
    }
    
@@ -26,8 +28,14 @@ class Employ1
  public void getActualSalary( )
  {
   
- double actualSal= 30*sal-sal*total_leave;
- System.out.println("The actuel sal is  :"+ actualSal);
+  Scanner sc =new Scanner(System.in);
+  System.out.println("Enter no. of total days in  months");
+  int total_days=sc.nextInt();
+  System.out.println("Enter the no. of days leave");
+  int total_leave = sc.nextInt();
+  double actul_Salary=(((total_days)-(total_leave))/(total_days))*(sal);
+  System.out.println("The actual salary  is:"+actul_Salary);
+  
  
  }
  
